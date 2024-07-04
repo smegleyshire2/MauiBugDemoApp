@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BugDemoApp.MainPage">
+
+    <Grid RowDefinitions="Auto, *">
+        <VerticalStackLayout>
+            <HorizontalStackLayout Spacing="4" HorizontalOptions="Center">
+                <Button Text="ADD ITEM" Clicked="btnAdd_Clicked"/>
+                <Button Text="REMOVE ITEM" Clicked="btnRemove_Clicked" />
+            </HorizontalStackLayout>
+            <ScrollView MaximumHeightRequest="350">
+                <VerticalStackLayout x:Name="slItems">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+        <Grid Grid.Row="1" BackgroundColor="Red"/>
+    </Grid>
+</ContentPage>
